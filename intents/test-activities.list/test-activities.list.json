@@ -1,0 +1,14 @@
+{
+  "name": "8ee819b3-c648-4550-bd10-5bb2683351eb",
+  "displayName": "test-activities.list",
+  "parameters": [ {
+    "id": "today-tomorrow",
+    "entityType": "@today-tomorrow"
+  } ],
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 7
+}

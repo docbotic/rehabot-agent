@@ -1,0 +1,80 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "today",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    }, {
+      "text": "'s plan",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "tomw",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    }, {
+      "text": "'s plan",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "tomws",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    }, {
+      "text": " plan",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "plan ",
+      "auto": true
+    }, {
+      "text": "tomw",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "plan ",
+      "auto": true
+    }, {
+      "text": "tomorrows",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "plan ",
+      "auto": true
+    }, {
+      "text": "tomorrow",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "plan ",
+      "auto": true
+    }, {
+      "text": "today",
+      "parameterId": "today-tomorrow",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "ba6b2acd-cd1e-4f0d-a480-67c8966d2893",
+  "displayName": "activities.update.none",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-contextual",
+    "value": "sys-contextual"
+  } ],
+  "numTrainingPhrases": 3
+}

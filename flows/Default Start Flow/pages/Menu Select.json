@@ -1,0 +1,78 @@
+{
+  "name": "b0750936-e24a-4c43-b124-2f539df1bf61",
+  "displayName": "Menu Select",
+  "form": {
+    "parameters": [ {
+      "displayName": "choice",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "attempts",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "0"
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.choice = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Plan Load - Today",
+    "name": "bd80ecf1-8021-4d33-a2ec-56f8ac19d417"
+  }, {
+    "condition": "$session.params.choice = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Plan Load - Tomorrow",
+    "name": "10ed7803-ede6-4f89-a783-d75f8597cf3c"
+  }, {
+    "condition": "$session.params.choice = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Coping Plans Load",
+    "name": "22ce3a07-f98f-49ca-9a03-4b37b95b1795"
+  }, {
+    "condition": "$session.params.choice = 4",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Goals Load",
+    "name": "5ee7e262-e00d-49c8-9d63-c7984607fc7c"
+  }, {
+    "condition": "$session.params.choice = 5",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Activities Load - Completed",
+    "name": "2a6fb704-66b9-4fa1-890d-7102846f9eab"
+  }, {
+    "condition": "$session.params.choice = 6",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Unfinished Activities Load",
+    "name": "f7714451-8b6c-4362-af13-9b66e9c1b3d4"
+  }, {
+    "condition": "$session.params.choice = 7",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Suggestions Load",
+    "name": "d8ae2dc6-4c79-45f6-ae67-f5984c7f1e6d"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "76ba6b00-a54b-4818-8aaf-69fb7369e533",
+  "displayName": "suggestions.list",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 12
+}

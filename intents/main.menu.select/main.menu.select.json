@@ -1,0 +1,14 @@
+{
+  "name": "bcf02642-1043-4176-8049-0f3294be247e",
+  "displayName": "main.menu.select",
+  "parameters": [ {
+    "id": "menu_selection",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-contextual",
+    "value": "sys-contextual"
+  } ],
+  "numTrainingPhrases": 9
+}

@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "today",
+    "synonyms": [ "today" ],
+    "languageCode": "en"
+  }, {
+    "value": "tomorrow",
+    "synonyms": [ "tomorrow", "tomorrows", "tomw" ],
+    "languageCode": "en"
+  } ]
+}

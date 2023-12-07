@@ -1,0 +1,32 @@
+{
+  "name": "7872140d-ec82-4b3d-8d43-abfc848cf19d",
+  "displayName": "loadActivityAssessment",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/loadActivityAssessment",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{}",
+    "parameterMapping": [ {
+      "key": "accomplishmentReprompt",
+      "value": "$.webhook.validations.accomplishment.reprompt"
+    }, {
+      "key": "accomplishmentValues",
+      "value": "$.webhook.validations.accomplishment.values"
+    }, {
+      "key": "enjoymentReprompt",
+      "value": "$.webhook.validations.enjoyment.reprompt"
+    }, {
+      "key": "enjoymentValues",
+      "value": "$.webhook.validations.enjoyment.values"
+    }, {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

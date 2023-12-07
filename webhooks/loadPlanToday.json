@@ -1,0 +1,20 @@
+{
+  "name": "fa19e463-8580-4c44-8a01-cf0a46b97f7c",
+  "displayName": "loadPlanToday",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-production.cloudfunctions.net/loadTemplate",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\",\n  \"name\": \"PlanToday\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

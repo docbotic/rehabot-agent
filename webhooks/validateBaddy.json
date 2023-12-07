@@ -1,0 +1,23 @@
+{
+  "name": "d2ab2afb-5499-4939-9ac1-7937a6566cc1",
+  "displayName": "validateBaddy",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/validateBaddy",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"choice\": \"$session.params.choice\"\n}",
+    "parameterMapping": [ {
+      "key": "choice",
+      "value": "$.webhook.value"
+    }, {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

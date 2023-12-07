@@ -1,0 +1,29 @@
+{
+  "name": "a6fb8549-e0f4-4395-ae21-8c416a19d525",
+  "displayName": "loadActivitiesUnfinished",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/loadActivitiesUnfinished",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\"\n}",
+    "parameterMapping": [ {
+      "key": "choiceIds",
+      "value": "$.webhook.validations.choice.ids"
+    }, {
+      "key": "choiceReprompt",
+      "value": "$.webhook.validations.choice.reprompt"
+    }, {
+      "key": "choiceValues",
+      "value": "$.webhook.validations.choice.values"
+    }, {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

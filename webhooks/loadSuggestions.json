@@ -1,0 +1,29 @@
+{
+  "name": "d31ab59e-83bc-411a-bfda-cec543cda6d6",
+  "displayName": "loadSuggestions",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/loadSuggestions",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\"\n}",
+    "parameterMapping": [ {
+      "key": "choiceIds",
+      "value": "$.webhook.validations.choice.ids"
+    }, {
+      "key": "choiceReprompt",
+      "value": "$.webhook.validations.choice.reprompt"
+    }, {
+      "key": "choiceValues",
+      "value": "$.webhook.validations.choice.values"
+    }, {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

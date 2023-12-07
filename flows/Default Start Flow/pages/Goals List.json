@@ -1,0 +1,33 @@
+{
+  "name": "248388ae-3237-4fd4-b84b-b14d50f874d7",
+  "displayName": "Goals List",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 0)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 1)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 2)" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "1 = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "929b9063-7c14-4025-93aa-095c92ed8b00"
+  } ]
+}

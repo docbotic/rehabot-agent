@@ -1,0 +1,43 @@
+{
+  "name": "fda04bb0-8dfd-4035-a9cf-87c84312a996",
+  "displayName": "Activity Assessment - Save",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "saveActivityAssessment",
+    "tag": "saveActivityAssessment-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Activity Assessment - Confirmation",
+    "name": "91f72935-82a1-4209-bf04-307fdf48f03c"
+  } ]
+}

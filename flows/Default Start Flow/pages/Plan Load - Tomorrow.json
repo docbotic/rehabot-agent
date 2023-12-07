@@ -1,0 +1,51 @@
+{
+  "name": "13f897b1-c3d8-4fc0-9cf6-f96addae0e54",
+  "displayName": "Plan Load - Tomorrow",
+  "form": {
+    "parameters": [ {
+      "displayName": "uid",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "R8PiWoc0mgN4jttDqFp4bV26qC53"
+    }, {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Plan List",
+    "name": "689b6c72-b42e-498c-9a83-58620fc232ef"
+  } ]
+}

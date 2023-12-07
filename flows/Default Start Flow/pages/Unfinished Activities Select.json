@@ -1,0 +1,66 @@
+{
+  "name": "9e80dc40-9018-425e-831f-80d8babae287",
+  "displayName": "Unfinished Activities Select",
+  "form": {
+    "parameters": [ {
+      "displayName": "choice",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 0)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 1)" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "choice",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "activities.update.none",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "choice",
+        "value": "$sys.func.COUNT($session.params.choiceValues)"
+      } ]
+    },
+    "targetPage": "Unfinished Activity Update",
+    "name": "e6710106-d490-4fd5-8fa8-865b1b3ebdae"
+  }, {
+    "condition": "$session.params.choice != null AND $sys.func.CONTAIN($session.params.choiceValues, $session.params.choice) = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.choiceReprompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "choice",
+        "value": null
+      } ]
+    },
+    "name": "040a6199-6b90-4008-99c8-8441642019b6"
+  }, {
+    "condition": "$page.params.status = FINAL AND $session.params.choice != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Unfinished Activity Update",
+    "name": "5a75ed5c-a845-478d-adf6-eabf7de2534d"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "8dc27eda-0837-43b8-b4cb-415452c6a53a",
+  "displayName": "goals.list",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 11
+}

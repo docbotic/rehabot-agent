@@ -1,0 +1,14 @@
+{
+  "name": "aa19ba1d-d5cd-418b-82ed-e3c760bfaa13",
+  "displayName": "baddies.select",
+  "parameters": [ {
+    "id": "choice",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-contextual",
+    "value": "sys-contextual"
+  } ],
+  "numTrainingPhrases": 4
+}

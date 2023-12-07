@@ -1,0 +1,7 @@
+{
+  "entities": [ {
+    "value": "^\\w{20,36}$",
+    "synonyms": [ "^\\w{20,36}$" ],
+    "languageCode": "en"
+  } ]
+}

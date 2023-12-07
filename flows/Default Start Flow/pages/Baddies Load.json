@@ -1,0 +1,85 @@
+{
+  "name": "35cc857d-8bf9-4698-8909-a60b455700af",
+  "displayName": "Baddies Load",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceValues",
+      "entityType": "@menuChoice",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceReprompt",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceIds",
+      "entityType": "@documentId",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "uid",
+      "entityType": "@documentId",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "ASDFASDFADSFASDFASDFASDF"
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.uid" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "listBaddies",
+    "tag": "list baddies",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    }, {
+      "parameter": "choiceValues",
+      "value": null
+    }, {
+      "parameter": "choiceReprompt",
+      "value": null
+    }, {
+      "parameter": "choiceIds",
+      "value": null
+    } ]
+  }
+}

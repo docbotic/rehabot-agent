@@ -1,0 +1,20 @@
+{
+  "name": "2e885452-762b-451e-8c35-4df9b903a88f",
+  "displayName": "chooseSuggestion",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/chooseSuggestion",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"choice\": \"$session.params.choice\",\n  \"choiceIds\": \"$session.params.choiceIds\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "8e75d094-a673-4d7b-abef-3e1bc43d36d2",
+  "displayName": "general.thank-you",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-vague",
+    "value": "sys-vague"
+  } ],
+  "numTrainingPhrases": 26
+}

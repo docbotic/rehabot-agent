@@ -1,0 +1,169 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hi! How are you doing?", "Hello! How can I help you?", "Good day! What can I do for you today?", "Greetings! How can I assist?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "91515f52-24fb-4301-983d-8a36e0ec59ab"
+  }, {
+    "intent": "main.menu",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Menu Load",
+    "name": "a05351b6-1ef5-46ad-a9d1-34ee699474e8"
+  }, {
+    "intent": "activities.list",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Plan Load",
+    "name": "2eac2c36-8822-4188-8a9b-a051addea2b9"
+  }, {
+    "intent": "copingPlans.list",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Coping Plans Load",
+    "name": "10c58741-317f-40fe-8bc8-c12812c95043"
+  }, {
+    "intent": "goals.list",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Goals Load",
+    "name": "27cab33e-844e-4abd-ba1d-2a44f4de807a"
+  }, {
+    "intent": "activities.list.completed",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Activities Load - Completed",
+    "name": "6f931e79-77c8-4241-a537-3b828ca16775",
+    "description": "Activities Load Completed"
+  }, {
+    "intent": "suggestions.list",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Suggestions Load",
+    "name": "6626ae35-ff9b-4604-878a-20c2b80a8c25"
+  }, {
+    "intent": "activities.update",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Unfinished Activities Load",
+    "name": "d0120b20-3348-4ebb-82c6-b03cc544c320"
+  }, {
+    "intent": "goals.assess",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Assessment Load",
+    "name": "126df9fe-f102-4cad-95ec-4a6c5e35c2d1"
+  }, {
+    "intent": "baddies",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "uid",
+        "value": "R8PiWoc0mgN4jttDqFp4bV26qC53"
+      } ]
+    },
+    "targetFlow": "Baddies Flow",
+    "name": "b5a154c0-61b4-4f04-97d1-0d34453441a1"
+  }, {
+    "intent": "debug",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "GoodMorning Load",
+    "name": "495e8aaf-5c40-4eed-b785-6cbefdde6b60"
+  }, {
+    "intent": "general.thank-you",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "You're doing great!", "You got this!", "I know you can do it!", "👍", "💙", "🤩", "👏👏👏", "🙌", "🏆", "🏅" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b09ae770-89d8-4ec1-8ea3-0288d7165343"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a549ec76-a962-48c8-8b88-408993f1db4b"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "Menu Load",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Not sure what you meant by that, but let me know how I can help!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8680e9b9-8c3c-4a5f-9960-2ff50ab772dd"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "902a33e9-0523-4078-b5eb-952b105dbaa0"
+  }, {
+    "targetPage": "End Session",
+    "event": "webhook.error.timeout",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm... I'm having a hard time retrieving that information. Please try again!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "897c64f5-27fb-4b4b-bd2a-8a3a7693c1fd"
+  }, {
+    "targetPage": "GoodMorning Load",
+    "event": "GoodMorningEvent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "14e5a1ad-c4ed-4870-8280-a6fb3fb8c3dd"
+  }, {
+    "targetPage": "Assessment Load",
+    "event": "GoalAssessmentsEvent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "bcc64d9d-9e6c-4661-afc2-d10f9c769c96"
+  }, {
+    "targetPage": "GoodEvening Load",
+    "event": "GoodEveningEvent",
+    "triggerFulfillment": {
+    
+    },
+    "name": "7fb82f49-f620-4187-928e-d7bbfcddd402"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_STANDARD",
+    "classificationThreshold": 0.30000001
+  }
+}

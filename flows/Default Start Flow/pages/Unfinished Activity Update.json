@@ -1,0 +1,60 @@
+{
+  "name": "9ee5d492-a537-4692-8a8b-2c62584dcf70",
+  "displayName": "Unfinished Activity Update",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "chooseActivityUnfinished",
+    "tag": "chooseActivityUnfinished-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL AND $session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.webhookMessage" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Activity Assessment - Load",
+    "name": "552e5a6e-95dc-4fc9-ab41-9961c4753b3e"
+  }, {
+    "condition": "$page.params.status = FINAL AND $session.params.webhookStatus = 418",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.webhookMessage" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Session",
+    "name": "7b1ef7ef-8288-4c3a-8d1c-948d1e9171c6"
+  } ]
+}

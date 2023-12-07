@@ -1,0 +1,79 @@
+{
+  "name": "7a204659-422c-4dae-aa00-9fd35202aa7c",
+  "displayName": "Baddies Load",
+  "form": {
+    "parameters": [ {
+      "displayName": "uid",
+      "entityType": "@documentId",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "ASDFASDFADSFASDFASDFASDF"
+    }, {
+      "displayName": "webhookStatus",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceValues",
+      "entityType": "@menuChoice",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceReprompt",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceIds",
+      "entityType": "@documentId",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.uid" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "listBaddies",
+    "tag": "listBaddies-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Baddies Menu",
+    "name": "c04be55e-8749-4e17-9703-abbbb15bd48b"
+  } ]
+}

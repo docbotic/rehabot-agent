@@ -1,0 +1,44 @@
+{
+  "name": "db964f4c-8338-4862-a1c7-486e43114144",
+  "displayName": "Baddies Select",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "chooseBaddy",
+    "tag": "chooseBaddy-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 201",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "COOL! $session.params.webhookMessage" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "426167f0-ac44-4ae5-af94-033da44de5d5"
+  } ]
+}

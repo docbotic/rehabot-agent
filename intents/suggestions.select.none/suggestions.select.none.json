@@ -1,0 +1,10 @@
+{
+  "name": "e920e5b5-aabd-40b7-ac6a-d49e48f23202",
+  "displayName": "suggestions.select.none",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-contextual",
+    "value": "sys-contextual"
+  } ],
+  "numTrainingPhrases": 2
+}

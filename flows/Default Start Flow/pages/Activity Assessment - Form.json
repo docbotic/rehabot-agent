@@ -1,0 +1,69 @@
+{
+  "name": "149d8051-8ddc-4f7b-b9a7-23701d792868",
+  "displayName": "Activity Assessment - Form",
+  "form": {
+    "parameters": [ {
+      "displayName": "enjoyment",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "$session.params.enjoymentReprompt" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "accomplishment",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "$session.params.accomplishmentReprompt" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.webhookMessage" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.enjoyment != null AND $sys.func.CONTAIN($session.params.enjoymentValues, $session.params.enjoyment) = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "enjoyment",
+        "value": null
+      } ]
+    },
+    "name": "56ba7b85-bdd3-474a-b915-0f9569471551"
+  }, {
+    "condition": "$session.params.accomplishment != null AND $sys.func.CONTAIN($session.params.accomplishmentValues, $session.params.accomplishment) = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "accomplishment",
+        "value": null
+      } ]
+    },
+    "name": "b41fcefe-4582-42fb-b387-112e355de9ab"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Activity Assessment - Save",
+    "name": "866a142e-fb95-417f-bf13-fc637d58c47a"
+  } ]
+}

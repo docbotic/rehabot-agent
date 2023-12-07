@@ -1,0 +1,28 @@
+{
+  "name": "1f242ad9-659b-4307-9d09-463075a1c554",
+  "displayName": "Coping Plans List",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 0)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 1)" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "1 = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "d5daaf20-b33b-4ad4-84a5-ea428479064d"
+  } ]
+}

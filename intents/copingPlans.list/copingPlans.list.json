@@ -1,0 +1,10 @@
+{
+  "name": "8595711a-1c35-40ec-8d77-501712df30dc",
+  "displayName": "copingPlans.list",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 12
+}

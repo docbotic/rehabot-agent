@@ -1,0 +1,10 @@
+{
+  "name": "50e69695-a94f-4cc6-9cdd-3c66d63e1227",
+  "displayName": "goals.assess",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 2
+}

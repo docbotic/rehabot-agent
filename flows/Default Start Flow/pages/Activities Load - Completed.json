@@ -1,0 +1,52 @@
+{
+  "name": "11890baa-45f8-4d79-899d-5b81e1232dcc",
+  "displayName": "Activities Load - Completed",
+  "form": {
+    "parameters": [ {
+      "displayName": "uid",
+      "entityType": "@documentId",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "R8PiWoc0mgN4jttDqFp4bV26qC53"
+    }, {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "loadActivitiesCompleted",
+    "tag": "loadActivitiesCompleted-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200 AND $page.params.status = FINAL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Activities List Completed",
+    "name": "bd5f27f2-72e0-424a-a8c4-14fbfcc7ef58"
+  } ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "fb16cf34-a918-4b6a-9ada-9087afd9a028",
+  "displayName": "Unfinished Activities Load",
+  "form": {
+    "parameters": [ {
+      "displayName": "uid",
+      "entityType": "@documentId",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "R8PiWoc0mgN4jttDqFp4bV26qC53"
+    }, {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceValues",
+      "entityType": "@menuChoice",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceIds",
+      "entityType": "@documentId",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "choiceReprompt",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "loadActivitiesUnfinished",
+    "tag": "loadActivitiesUnfinished-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL AND $session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Unfinished Activities Select",
+    "name": "acb413c0-f1c1-40bd-bd52-c2914332ee83"
+  } ]
+}

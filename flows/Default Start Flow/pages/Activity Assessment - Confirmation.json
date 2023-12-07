@@ -1,0 +1,23 @@
+{
+  "name": "75b01a04-203e-4ae8-ada5-1cd6d07d2647",
+  "displayName": "Activity Assessment - Confirmation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.webhookMessage" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "1 = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "8456e8b8-03cb-40e0-beb9-66b6b410ff8c"
+  } ]
+}

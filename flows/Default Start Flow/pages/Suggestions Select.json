@@ -1,0 +1,102 @@
+{
+  "name": "c74aeb71-244c-4e9c-be44-56da233e3a32",
+  "displayName": "Suggestions Select",
+  "form": {
+    "parameters": [ {
+      "displayName": "attempts",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "0"
+    }, {
+      "displayName": "choice",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Type the number for the suggestion you would like to add. Or you can text \"none\"." ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmmm, that's out of range. Give me something from the list above, please." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f4947bad-e6ed-420f-9dc1-2177c7a61ffc"
+        }, {
+          "event": "sys.invalid-parameter",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "HOLY SHIT IT\"S INVALID!" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "c6a79fff-d0b4-4703-a399-6e044448d83a"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 0)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 1)" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "choice",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "suggestions.select.none",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "choice",
+        "value": "$sys.func.COUNT($session.params.choiceValues)"
+      } ]
+    },
+    "targetPage": "Suggestion Add",
+    "name": "14e445a8-365e-4b91-91d5-3811d8bec337"
+  }, {
+    "condition": "$session.params.choice != null AND $sys.func.CONTAIN($session.params.choiceValues, $session.params.choice) = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "attempts",
+        "value": "$sys.func.ADD($sys.func.TO_NUMBER($session.params.attempts), 1)"
+      }, {
+        "parameter": "choice",
+        "value": null
+      } ]
+    },
+    "name": "660e8d92-172e-485e-9587-cc80f9b28cb7",
+    "description": "Validate"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $page.params.choice != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Suggestion Add",
+    "name": "880a6ded-2f89-43ce-b297-a1cb0c4ba2ce"
+  } ],
+  "description": "Displays loaded itemized suggestions. Then prompts for a choice. Validates against `POST validateSuggestion`, which will reset `choice = null` if validation fails!"
+}

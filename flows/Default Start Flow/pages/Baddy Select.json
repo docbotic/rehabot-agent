@@ -1,0 +1,35 @@
+{
+  "name": "1e7dac57-c85a-469b-b119-2951d709a65f",
+  "displayName": "Baddy Select",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "chooseBaddy",
+    "tag": "chooseBaddy-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  }
+}

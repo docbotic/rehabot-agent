@@ -1,0 +1,29 @@
+{
+  "name": "95169dd3-b624-4c64-8e79-61d3c6abf486",
+  "displayName": "loadGoalsAssessment",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/loadGoalsAssessment",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\"\n}",
+    "parameterMapping": [ {
+      "key": "goalDescriptions",
+      "value": "$.webhook.goals.descriptions"
+    }, {
+      "key": "goalIds",
+      "value": "$.webhook.goals.ids"
+    }, {
+      "key": "ratingReprompt",
+      "value": "$.webhook.validations.ratings.reprompt"
+    }, {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

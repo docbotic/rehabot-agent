@@ -1,0 +1,51 @@
+{
+  "name": "f2d1b879-05e3-4bad-abc9-77a51dcd7b83",
+  "displayName": "Suggestion Add",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "description": "HTTP CODES..."
+    }, {
+      "displayName": "webhookMessage",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "chooseSuggestion",
+    "tag": "chooseSuggestion",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.webhookMessage\n\nText “plan” to see today’s plan, or “menu” to see what else I can help with!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Session",
+    "name": "8f065218-6d2f-4892-970f-128983033d4e"
+  } ],
+  "description": "Calls a webhook to add `suggestion[choice-1]` to patients plan. Receives a text response and displays it. Ends the session."
+}

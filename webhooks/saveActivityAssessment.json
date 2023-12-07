@@ -1,0 +1,20 @@
+{
+  "name": "61e8fdb7-a0c2-4336-bf59-623742e7720a",
+  "displayName": "saveActivityAssessment",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/saveActivityAssessment",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"choice\": \"$session.params.choice\",\n  \"choiceIds\": \"$session.params.choiceIds\",\n  \"enjoyment\": \"$session.params.enjoyment\",\n  \"accomplishment\": \"$session.params.accomplishment\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

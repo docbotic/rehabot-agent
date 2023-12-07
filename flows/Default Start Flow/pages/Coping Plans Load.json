@@ -1,0 +1,52 @@
+{
+  "name": "9efc33c5-0eb7-42a5-89f5-4fca22761b17",
+  "displayName": "Coping Plans Load",
+  "form": {
+    "parameters": [ {
+      "displayName": "uid",
+      "entityType": "@documentId",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "R8PiWoc0mgN4jttDqFp4bV26qC53"
+    }, {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "loadCopingPlans",
+    "tag": "loadCopingPlans-try",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL AND $session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Coping Plans List",
+    "name": "58277c63-d397-4bcc-8e95-1dd4aaa120bf"
+  } ]
+}

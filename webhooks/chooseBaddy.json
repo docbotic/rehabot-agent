@@ -1,0 +1,20 @@
+{
+  "name": "ad079428-52de-41a0-a480-6efc45717475",
+  "displayName": "chooseBaddy",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/chooseBaddy",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"choice\": \"$session.params.choice\",\n  \"choiceIds\": \"$session.params.choiceIds\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "e141df82-ff64-42c5-96ee-10de4bf6eafc",
+  "displayName": "Baddies Menu",
+  "form": {
+    "parameters": [ {
+      "displayName": "attempts",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "0"
+    }, {
+      "displayName": "choice",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "(Attempts: $session.params.attempts)" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.webhookMessage" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.choice != null AND $sys.func.CONTAIN($session.params.choiceValues, $session.params.choice) = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.choiceReprompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "attempts",
+        "value": "$sys.func.ADD($sys.func.TO_NUMBER($session.params.attempts), 1)"
+      }, {
+        "parameter": "choice",
+        "value": null
+      } ]
+    },
+    "name": "7e1933b6-2750-431a-86b4-fdb7186721a7"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $session.params.choice != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Baddies Select",
+    "name": "2bbdd97e-e8fc-4e8e-9192-02c56b7fce1c"
+  } ]
+}

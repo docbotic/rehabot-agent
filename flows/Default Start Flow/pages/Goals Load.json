@@ -1,0 +1,53 @@
+{
+  "name": "1309d389-db26-45fd-946b-75f20fffa6fd",
+  "displayName": "Goals Load",
+  "form": {
+    "parameters": [ {
+      "displayName": "uid",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "R8PiWoc0mgN4jttDqFp4bV26qC53"
+    }, {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "webhook": "loadGoals",
+    "tag": "loadGoals-tryplz",
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200 AND $page.params.status = FINAL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Goals List",
+    "name": "e9c03945-3f92-40c4-b671-3c7673235a22"
+  } ]
+}

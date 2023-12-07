@@ -1,0 +1,14 @@
+{
+  "name": "7ba93974-bb13-490a-aabf-8e2fd6e51ef2",
+  "displayName": "activities.list",
+  "parameters": [ {
+    "id": "planDate",
+    "entityType": "@sys.date"
+  } ],
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 57
+}

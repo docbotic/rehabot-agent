@@ -1,0 +1,14 @@
+{
+  "name": "81e1e399-c4cd-4fce-9cb2-3ae19cc8af0d",
+  "displayName": "activities.update",
+  "parameters": [ {
+    "id": "date-time",
+    "entityType": "@sys.date-time"
+  } ],
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 34
+}

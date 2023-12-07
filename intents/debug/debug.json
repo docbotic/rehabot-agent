@@ -1,0 +1,10 @@
+{
+  "name": "fc418c32-6128-4140-86a1-c0c41e9448bf",
+  "displayName": "debug",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 1
+}

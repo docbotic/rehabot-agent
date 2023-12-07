@@ -1,0 +1,10 @@
+{
+  "name": "e745da5c-5a60-4dca-968f-3b2953603521",
+  "displayName": "activities.list.completed",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 20
+}

@@ -1,0 +1,20 @@
+{
+  "name": "f7c90947-91d9-4fef-99b1-6de7b7daf0c1",
+  "displayName": "chooseActivityUnfinished",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/chooseActivityUnfinished",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\",\n  \"choice\": \"$session.params.choice\",\n  \"choiceIds\": \"$session.params.choiceIds\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

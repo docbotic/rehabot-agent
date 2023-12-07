@@ -1,0 +1,58 @@
+{
+  "name": "2fd4bc35-5283-42df-82ec-eb92a2e66d7d",
+  "displayName": "Assessment Form",
+  "form": {
+    "parameters": [ {
+      "displayName": "rating",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "On a scale of 1-5, how satisfied are you with your progress toward you goal:\n\n🎯 $sys.func.GET($session.params.goalDescriptions, $sys.func.COUNT($session.params.ratings))\n\n1 = not at all\n2 \n3 = moderately\n4 \n5 = very much" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "ratings",
+      "entityType": "@sys.number",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.webhookMessage" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\" AND $sys.func.COUNT($session.params.ratings) \u003c $sys.func.COUNT($session.params.goalIds)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "ratings",
+        "value": "$sys.func.APPEND($session.params.ratings, $session.params.rating)"
+      }, {
+        "parameter": "rating",
+        "value": null
+      } ]
+    },
+    "name": "78398af3-cdd5-4478-a8a4-a7f8c8815577"
+  }, {
+    "condition": "$sys.func.COUNT($session.params.ratings) = $sys.func.COUNT($session.params.goalIds)",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Assessment Save",
+    "name": "e1007947-53c8-45f3-aae0-eec68756e57f"
+  } ]
+}

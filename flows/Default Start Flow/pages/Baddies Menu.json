@@ -1,0 +1,65 @@
+{
+  "name": "e9af645a-5484-4d6a-859e-3418b7b6a473",
+  "displayName": "Baddies Menu",
+  "form": {
+    "parameters": [ {
+      "displayName": "attempts",
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "0"
+    }, {
+      "displayName": "choice",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Who do you want to roll with? (Attempts: $session.params.attempts)" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.invalid-parameter",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "invalid parameter" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "4affb350-e102-4eb1-8ea3-122acee3e1bc"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "hmm, no match" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "15b808ac-d56c-49ee-a1f5-09661660d347"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.uid" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "choice",
+      "value": null
+    } ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "eight",
+      "parameterId": "one",
+      "auto": true
+    }, {
+      "text": " bright ",
+      "auto": true
+    }, {
+      "text": "Green",
+      "auto": true
+    }, {
+      "text": " orbs",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "three",
+      "parameterId": "one",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "orange"
+    }, {
+      "text": " samples"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "take a walk with "
+    }, {
+      "text": "2",
+      "parameterId": "one",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "blue"
+    }, {
+      "text": " people"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

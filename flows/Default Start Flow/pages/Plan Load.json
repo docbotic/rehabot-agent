@@ -1,0 +1,25 @@
+{
+  "name": "b576cfa6-eaba-4f35-836b-3c78a5ac3a4b",
+  "displayName": "Plan Load",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.planDate = null OR $sys.func.IS_FUTURE_DATE($session.params.planDate) = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Plan Load - Today",
+    "name": "1f5778d1-3a8a-4df3-be1a-d13c29054612"
+  }, {
+    "condition": "$sys.func.IS_FUTURE_DATE($session.params.planDate) = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Plan Load - Tomorrow",
+    "name": "7f5bfcc5-b149-4778-b100-c128109c69e1"
+  } ]
+}

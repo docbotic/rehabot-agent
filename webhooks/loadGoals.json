@@ -1,0 +1,20 @@
+{
+  "name": "85692bc5-d257-4829-9abd-7e3e523246a3",
+  "displayName": "loadGoals",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/loadTemplate",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\",\n  \"name\": \"GoalsList\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

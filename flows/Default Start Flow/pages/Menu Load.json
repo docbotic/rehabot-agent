@@ -1,0 +1,48 @@
+{
+  "name": "d0575875-aa5d-46af-ab3f-983c5d517b1b",
+  "displayName": "Menu Load",
+  "form": {
+    "parameters": [ {
+      "displayName": "webhookStatus",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      },
+      "defaultValue": "0"
+    }, {
+      "displayName": "webhookMessage",
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "webhookStatus",
+      "value": null
+    }, {
+      "parameter": "webhookMessage",
+      "value": null
+    } ],
+    "returnPartialResponses": true
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.webhookStatus = 200",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.webhookMessage" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Menu Select",
+    "name": "1aff2231-d7c8-4085-8fd1-72a9d04fc83f"
+  } ]
+}

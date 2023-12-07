@@ -1,0 +1,33 @@
+{
+  "name": "af9f83d7-fc80-494f-b88f-8dccbf192147",
+  "displayName": "Plan List",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 0)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 1)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 2)" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "1 = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "fda56219-8fc9-4181-9c9d-5b9c446cd74a"
+  } ]
+}

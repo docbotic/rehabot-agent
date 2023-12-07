@@ -1,0 +1,20 @@
+{
+  "name": "21e4ab87-a4e4-4a49-83e2-7b83a0cb1804",
+  "displayName": "saveGoalsAssessment",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/saveGoalsAssessment",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"ratings\": \"$session.params.ratings\",\n  \"goalIds\": \"$session.params.goalIds\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "b106ab12-0bf2-47f0-b9e5-b057a6246c2b",
+  "displayName": "suggestions.select",
+  "parameters": [ {
+    "id": "one",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 3
+}

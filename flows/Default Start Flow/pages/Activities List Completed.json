@@ -1,0 +1,33 @@
+{
+  "name": "cd78b8ff-f6d0-44ba-aa41-4c47d97addb5",
+  "displayName": "Activities List Completed",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 0)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 1)" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "$sys.func.GET($session.params.webhookMessage, 2)" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "1 = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Session",
+    "name": "178e61fe-e058-4e3a-9adc-c8a6504eb145"
+  } ]
+}

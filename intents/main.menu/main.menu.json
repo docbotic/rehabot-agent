@@ -1,0 +1,10 @@
+{
+  "name": "b7ebce25-4909-4b89-b0c4-5275d1064a63",
+  "displayName": "main.menu",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 10
+}

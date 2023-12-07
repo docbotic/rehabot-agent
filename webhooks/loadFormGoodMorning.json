@@ -1,0 +1,20 @@
+{
+  "name": "59b041ec-bbac-45fc-9ab0-5b1756dd91de",
+  "displayName": "loadFormGoodMorning",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/loadTemplate",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"uid\": \"$session.params.uid\",\n  \"name\": \"GoodMorning\"\n}",
+    "parameterMapping": [ {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}

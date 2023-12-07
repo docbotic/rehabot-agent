@@ -1,0 +1,29 @@
+{
+  "name": "664da096-2b8f-49a1-a732-0bb312c8ec5f",
+  "displayName": "listBaddies",
+  "genericWebService": {
+    "uri": "https://us-central1-rehabot-staging.cloudfunctions.net/listBaddies",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{}",
+    "parameterMapping": [ {
+      "key": "choiceIds",
+      "value": "$.webhook.validations.choice.ids"
+    }, {
+      "key": "choiceReprompt",
+      "value": "$.webhook.validations.choice.reprompt"
+    }, {
+      "key": "choiceValues",
+      "value": "$.webhook.validations.choice.values"
+    }, {
+      "key": "webhookMessage",
+      "value": "$.webhook.message"
+    }, {
+      "key": "webhookStatus",
+      "value": "$.webhook.status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 10
+  }
+}
